@@ -1,0 +1,38 @@
+* {
+    border:0;
+    margin: 0;
+}
+
+.appFrame {
+border: 1px solid #6f6969;
+height: 550px;
+max-height: 650px;
+width: 450px;
+max-width:500px;
+margin: 0 auto;
+margin-top: 10px;
+border-radius: 10px;
+}
+
+.display {
+	border: 1px solid burlywood;
+	height: 100px;
+	width: 90%;
+	margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.buttonB {
+	border: 1px solid darkgrey;
+	width: 90%;
+	margin: auto;
+	height: 390px;
+	margin-top: 12px;
+	border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 15px;
+}
