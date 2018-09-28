@@ -3,9 +3,13 @@
     margin: 0;
 }
 
+body {
+	min-height: 100vh;
+	background: linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%), linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%), linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%), linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+}
+
 .appFrame {
-border: 1px solid #6f6969;
-height: 550px;
+height: 560px;
 max-height: 650px;
 width: 450px;
 max-width:500px;
@@ -15,24 +19,46 @@ border-radius: 10px;
 }
 
 .display {
-	border: 1px solid burlywood;
 	height: 100px;
 	width: 90%;
 	margin: auto;
     margin-top: 10px;
-    border-radius: 10px;
+	background-color: #33434C;
 }
 
 .buttonB {
-	border: 1px solid darkgrey;
 	width: 90%;
 	margin: auto;
-	height: 390px;
-	margin-top: 12px;
-	border-radius: 10px;
+	height: 491px;
+	background-color: #0C1F2E
 }
 
 h1 {
     text-align: center;
-    margin-top: 15px;
+	margin-top: 15px;
+	color: #0C1F2E;
+}
+
+button {
+	width: 91px;
+	height: 91px;
+	margin:3px;
+	background-color: #0C1F2E;
+    color: #098A8C;
+}
+
+/* this is for the display section*/
+element {
+	float: right;
+	margin-top: 65px;
+	margin-right: 5px;
+	color: #F74458;
+}
+
+.specialBtns button {
+ color: #F74458;
+}
+
+#special {
+	width: 300px;
 }
