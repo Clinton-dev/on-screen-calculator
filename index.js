@@ -34,3 +34,24 @@ function operator(sign,a,b){
 			break;
 	}
 }
+
+
+
+const btns = Array.from(document.querySelectorAll('button'));
+const display = document.querySelector('.display');
+
+
+    btns.forEach(btn => btn.addEventListener('click', function(){
+		//console.log(this.innerText);
+		//display text value on calc display on click
+		let value = this.innerText;
+		//display.textContent = value;
+		const content = document.createElement('div');
+		content.classList.add('content');
+		content.textContent = value;
+		display.appendChild(content);
+
+	})
+)
+
+addEventListener
