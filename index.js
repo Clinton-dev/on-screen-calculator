@@ -39,19 +39,21 @@ function operator(sign,a,b){
 
 const btns = Array.from(document.querySelectorAll('button'));
 const display = document.querySelector('.display');
+const result = document.getElementById('result');//equals btn
+const backspace = document.getElementById('backspace');
+const clear = document.getElementById('clear');//clear btn
+const resultDisplayed = false;//flag
 
 
-    btns.forEach(btn => btn.addEventListener('click', function(){
-		//console.log(this.innerText);
-		//display text value on calc display on click
-		let value = this.innerText;
-		//display.textContent = value;
-		const content = document.createElement('div');
-		content.classList.add('content');
-		content.textContent = value;
-		display.appendChild(content);
-
+    btns.forEach(btn => btn.addEventListener('click', function(e){
+		
+		//store string value to be used
+		var value = this.innerHTML;
+		var lastChar = value[value.length -1];
+		display.textContent +=value;
+		
 	})
-)
+);
 
-addEventListener
+
+

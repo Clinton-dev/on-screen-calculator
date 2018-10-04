@@ -24,6 +24,8 @@ border-radius: 10px;
 	margin: auto;
     margin-top: 10px;
 	background-color: #33434C;
+	color: #EF3E46;
+	text-align: right;
 }
 
 .buttonB {
@@ -37,6 +39,18 @@ h1 {
     text-align: center;
 	margin-top: 15px;
 	color: #0C1F2E;
+}
+
+.content {
+	display:inline-block;
+}
+
+.content {
+	display: inline-block;
+	color: #CA3E48;
+	text-align: right;
+	padding: 2px;
+	margin-top: 34px;
 }
 
 button {
