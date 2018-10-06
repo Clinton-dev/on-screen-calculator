@@ -14,25 +14,38 @@ function divide(a,b){
     return a/b;
 }
 
-function operator(sign,a,b){
-		
-	switch (sign) {
-		case '+':
-			add(a,b)
+function operator(a,b,sign){
+		console.log(a,b,sign);
+	/*switch (a,b,sign) {
+		case sign == '+':
+		 return	add(a,b)
 			break;
-		case '/':
-			divide(a,b)
+		case sign == '/':
+		 return divide(a,b)
 			break;
-		case '-':
-			subtract(a,b)
+		case sign == '-':
+		return subtract(a,b)
 			break;
-		case '*':
-			multipy(a,b)
+		case sign == '*':
+		return	multipy(a,b)
 			break;
 		default:
-			console.log('check if u included he operator');
+			console.log('check if u included the operator');
 			break;
+	}*/
+	if(!sign){
+		return;
 	}
+		if(sign == '+'){
+			return add(a,b);
+		}else if(sign == '-') {
+			 subtract(a,b);
+		}else if(sign == '*'){
+			return multiply(a,b);
+		}else if(sign == '/'){
+			return divide(a,b);
+		}
+
 }
 
 
