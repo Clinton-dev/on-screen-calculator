@@ -1,22 +1,20 @@
-function add (a,b) {
-	return a + b;
+const calculator = {
+	displayValue: '0',
+	firstOperand : null,
+	secondOperand: false,
+	operator: null,
+	waitingForSecondOperand: false
 }
 
-function subtract (a,b) {
-	return a - b;
-}
-
-function multiply (a,b) {
-	return a * b; 
-}
-
-function divide(a,b){
-    return a/b;
-}
+const btns = Array.from(document.querySelectorAll('button'));
+const display = document.querySelector('.display');
+const result = document.getElementById('result');//equals btn
+const backspace = document.getElementById('backspace');
+const clear = document.getElementById('clear');//clear btn
+const resultDisplayed = false;//flag
 
 function operator(a,b,sign){
-		console.log(a,b,sign);
-	/*switch (a,b,sign) {
+	switch (a,b,sign) {
 		case sign == '+':
 		 return	add(a,b)
 			break;
@@ -32,14 +30,15 @@ function operator(a,b,sign){
 		default:
 			console.log('check if u included the operator');
 			break;
-	}*/
+	}
+
 	if(!sign){
 		return;
 	}
 		if(sign == '+'){
 			return add(a,b);
 		}else if(sign == '-') {
-			 subtract(a,b);
+			return subtract(a,b);
 		}else if(sign == '*'){
 			return multiply(a,b);
 		}else if(sign == '/'){
@@ -48,23 +47,43 @@ function operator(a,b,sign){
 
 }
 
+function Display(val){
+ display.textContent = calculator.displayValue;
+}
+Display();
 
+function inputNo(num){
+	const {displayValue,waitingForSecondOperand} = calculator;
+	if(waitingForSecondOperand == true){
+		calculator.displayValue = num;
+		calculator.waitingForSecondOperand =false;
+	}else{
+	calculator.displayValue = displayValue === '0' ? num : displayValue + num;
+	console.log(calculator);
+	}
+}
+ 
+function maintainOperator(nextOperator){
+	const {displayValue,firstOperand,secondOperand,operator}= calculator;
+	const value = parseFloat(displayValue);
 
-const btns = Array.from(document.querySelectorAll('button'));
-const display = document.querySelector('.display');
-const result = document.getElementById('result');//equals btn
-const backspace = document.getElementById('backspace');
-const clear = document.getElementById('clear');//clear btn
-const resultDisplayed = false;//flag
-
-
+	if (firstOperand === null) {
+		calculator.firstOperand = inputValue;
+	  }
+	
+	  calculator.waitingForSecondOperand = true;
+	  calculator.operator = nextOperator;
+	  console.log(calculator);
+}
     btns.forEach(btn => btn.addEventListener('click', function(e){
-		
-		//store string value to be used
-		var value = this.innerHTML;
-		var lastChar = value[value.length -1];
-		display.textContent +=value;
-		
+		const {target} = e;
+		inputNo(target.value);
+		Display();
+
+		/*if() {
+			maintainOperator(target.value)
+			display();
+		}*/
 	})
 );
 
