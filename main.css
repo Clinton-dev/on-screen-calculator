@@ -41,6 +41,10 @@ h1 {
 	color: #0C1F2E;
 }
 
+.operator {
+	color: #F74458;
+}
+
 .content {
 	display:inline-block;
 }

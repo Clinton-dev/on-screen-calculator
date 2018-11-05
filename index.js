@@ -79,11 +79,11 @@ function maintainOperator(nextOperator){
 		const {target} = e;
 		inputNo(target.value);
 		Display();
-
-		/*if() {
-			maintainOperator(target.value)
+		
+		if(target.classList.contains('operator')){
+			maintainOperator(target.value);
 			display();
-		}*/
+		}
 	})
 );
 
