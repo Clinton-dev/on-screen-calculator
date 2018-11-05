@@ -8,9 +8,9 @@ const calculator = {
 
 const btns = Array.from(document.querySelectorAll('button'));
 const display = document.querySelector('.display');
-const result = document.getElementById('result');//equals btn
-const backspace = document.getElementById('backspace');
-const clear = document.getElementById('clear');//clear btn
+const result = document.getElementsByClassName('result');//equals btn
+const backspace = document.getElementsByClassName('backspace');
+const clear = document.getElementsByClassName('clear');//clear btn
 const resultDisplayed = false;//flag
 
 function operator(a,b,sign){
@@ -68,7 +68,9 @@ function maintainOperator(nextOperator){
 	const value = parseFloat(displayValue);
 
 	if (firstOperand === null) {
-		calculator.firstOperand = inputValue;
+		calculator.firstOperand = value;
+	  }else if(operator){
+		  result = perfomCalc[operator](firstOperand,secondOperand)
 	  }
 	
 	  calculator.waitingForSecondOperand = true;
@@ -76,14 +78,20 @@ function maintainOperator(nextOperator){
 	  console.log(calculator);
 }
     btns.forEach(btn => btn.addEventListener('click', function(e){
-		const {target} = e;
+		const { target } = e;
+		
+		if (target.classList.contains('operator')) {
+			maintainOperator(target.value);
+			Display();
+			return;
+		}
+	  
+		if (target.classList.contains('clear')) {
+		  //what clear btn will do
+		}
+	  
 		inputNo(target.value);
 		Display();
-		
-		if(target.classList.contains('operator')){
-			maintainOperator(target.value);
-			display();
-		}
 	})
 );
 
